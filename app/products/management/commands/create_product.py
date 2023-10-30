@@ -3,6 +3,9 @@ from products.models import Category, Subcategory, Product, SubcategoryImage, Ca
 
 
 class Command(BaseCommand):
+    """
+    Функция добавления тестовых категорий/подкатегорий и связанных товаров.
+    """
     def create_product_with_category_and_subcategory(self, category_title, subcategory_title, product_data):
         category, _ = Category.objects.get_or_create(title=category_title)
         CategoryImage.objects.create(category=category)
